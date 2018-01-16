@@ -10,12 +10,12 @@ class Block:
 
         self.blockHash = sha256_hash(contents)
 
-        @staticmethod
-        def sha256_hash(self, c):
-            c = str(c)
-            inner_hash = hashlib.sha256(c.encode()).hexdigest().encode()
-            outer_hash = hashlib.sha256(inner_hash).hexdigest()
-            return outer_hash
+    def sha256_hash(self, c):
+        c = str(c)
+        inner_hash = hashlib.sha256(c.encode()).hexdigest().encode()
+        outer_hash = hashlib.sha256(inner_hash).hexdigest()
+        return outer_hash
 
+    @staticmethod
     def genesis_block():
         return Block ("The very first block", datetime.datetime.now(), "0")
