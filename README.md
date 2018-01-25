@@ -8,3 +8,7 @@ A very simple python implementation of a blockchain
   - [ ] Store transactions and other actions in the blockchain
   - [ ] Save the blockchain
   - [ ] Demonstrate Orphan blocks
+  
+  
+  The cryptography package is required to run the wallet
+  https://pypi.python.org/pypi/cryptography
