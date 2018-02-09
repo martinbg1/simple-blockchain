@@ -9,7 +9,7 @@ class Wallet:
 
         self.raw_key = rsa.generate_private_key(backend=crypto_default_backend(),public_exponent=65537,key_size=512)
         self.publicKey = self.generate_publicKey(self.raw_key)
-        #Not safe to store privateKey here. This is meant as a demonstration
+        #Not safe to store privateKey here. This is meant as an demonstration
         self.privateKey = self.generate_privateKey(self.raw_key)
 
 
