@@ -23,17 +23,19 @@ class Wallet:
 
     def transaction(self, recv_publicKey, sender_privateKey, amount, node_wallets):
         flag = False
-        if self.check_privateKey(sender_privateKey) and amount >= self.balance:
-            print("pending...")
+        if self.check_privateKey(sender_privateKey) and self.balance >= amount:
+            print(">>>pending...")
             for wallet in node_wallets:
                 if recv_publicKey == wallet.publicKey:
                     self.balance -= amount
                     wallet.balance += amount
-                    print("transaction conpleted. Sent ", amount, " to ", wallet.publicKey)
+                    print(">>>transaction conpleted. Sent ", amount, " to ", wallet.publicKey)
                     flag = True
                     break
-        if not flag:
-            print("Transaction failed...")
+            if not flag:
+                print(">>>Public key does not exist")
+        else:
+            print(">>>Transaction failed...")
 
     def check_privateKey(self, privateKey):
         return self.privateKey == privateKey
